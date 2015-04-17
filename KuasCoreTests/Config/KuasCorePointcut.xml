@@ -4,7 +4,9 @@
 
   <!-- AOP 記錄 Log 的 Advice. -->
   <object id="debogLogInterceptor" type="KuasCore.Interceptors.DebogLogInterceptor" />
+ 
 
+  
   <!-- 用單一物件實體指定, 指定 AOP 要掛在哪一個物件上 -->
   <!-- InterceptorNames = AOP Advice, Target = Reference. Service Object. -->
 
@@ -43,6 +45,7 @@
   <object id="servicePointcut" type="Spring.Aop.Support.SdkRegularExpressionMethodPointcut, Spring.Aop">
     <property name="Pattern" value="KuasCore.Services.*Service" />
   </object>
+
 
   <aop:config>
     <aop:advisor pointcut-ref="servicePointcut" advice-ref="debogLogInterceptor" />
